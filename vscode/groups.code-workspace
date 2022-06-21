@@ -1,0 +1,56 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+
+	"settings": {
+		"git.autofetch": true,
+		"git.confirmSync": false,
+		"workbench.startupEditor": "none",
+		"codestream.email": "sam.heller@customink.com",
+		"window.zoomLevel": 1,
+		"solargraph.bundlerPath": "/usr/local/bundle",
+		"solargraph.commandPath": "/workspaces/groups/vendor/bundle/ruby/gems/solargraph-0.44.2/bin/solargraph",
+		"git.ignoreRebaseWarning": true,
+		"githubPullRequests.fileListLayout": "tree",
+        "ruby.codeCompletion": "rcodetools",
+        "github.codespaces.defaultExtensions": [
+            "GitHub.codespaces",
+            "GitHub.vscode-pull-request-github",
+            "mutantdino.resourcemonitor",
+            "rebornix.ruby",
+            "wingrunr21.vscode-ruby",
+            "castwide.solargraph",
+            "hoovercj.ruby-linter",
+            "eamodio.gitlens",
+            "paragdiwan.gitpatch"
+        ]
+	},
+	"launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Debug Current Test File",
+                "type": "Ruby",
+                "request": "launch",
+                "program": "${workspaceRoot}/bin/rails",
+                "args": [ "t", "${file}" ],
+                "pathToRDebugIDE": "${workspaceRoot}/vendor/bundle/ruby/gems/ruby-debug-ide-0.7.3/",
+                "showDebuggerOutput": true,
+                "useBundler": true
+            },
+            {
+                "name": "Debug Rails Server",
+                "type": "Ruby",
+                "request": "launch",
+                "program": "${workspaceRoot}/bin/rails",
+                "args": ["server"],
+                "pathToRDebugIDE": "${workspaceRoot}/vendor/bundle/ruby/gems/ruby-debug-ide-0.7.3/",
+                "useBundler": true,
+                "showDebuggerOutput": true
+            }
+        ]
+    }	
+}
