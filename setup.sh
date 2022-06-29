@@ -14,9 +14,8 @@ if [ "$CODESPACES" = "true" ]; then
     fi
 
     # Apt installs
-    sudo apt install -y \
-        socat inetutils-ping telnet \  # Networking Doodads
-        vim shellcheck # Editors and whatnot
+    sudo apt update -y
+    sudo apt install -y socat inetutils-ping telnet shellcheck vim
 
     # Default to ZSH
     sudo chsh -s /usr/bin/zsh
@@ -25,23 +24,14 @@ if [ "$CODESPACES" = "true" ]; then
     cat aliases/* >> ~/.zshrc
     cat aliases/* >> ~/.bashrc
 
+    # Copy over workspace config    
+    cp vscode/code-workspace  /workspaces/$(ls /workspaces)/.code-workspace
     
-    if [ -d "/workspaces/groups" ]; then
-      # Copy over workspaces settings
-      cp vscode/groups.code-workspace  /workspaces/groups/.code-workspace
-      
-      # Gem installs
-      gem install solargraph ruby-debug-ide debase
-
+    if [ -d "/workspaces/groups" ]; then      
       # Expose Redis to local 
       socat TCP4-LISTEN:6379,reuseaddr,fork TCP:customink-redis:6379 &
 
       # Expose MySQL to local
-      socat TCP4-LISTEN:3306,reuseaddr,fork TCP:customink-mysl57:3306 &  
+      socat TCP4-LISTEN:3306,reuseaddr,fork TCP:customink-mysql57:3306 &  
     fi    
 fi
-
-
-
-
-

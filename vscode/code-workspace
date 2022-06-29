@@ -11,7 +11,7 @@
 		"workbench.startupEditor": "none",
 		"window.zoomLevel": 1,
 		"solargraph.bundlerPath": "/usr/local/bundle",
-		"solargraph.commandPath": "/workspaces/groups/vendor/bundle/ruby/gems/solargraph-0.44.2/bin/solargraph",
+		"solargraph.commandPath": "${workspaceRoot}/vendor/bundle/ruby/gems/solargraph-0.44.2/bin/solargraph",
 		"git.ignoreRebaseWarning": true,
 		"githubPullRequests.fileListLayout": "tree",
         "ruby.codeCompletion": "rcodetools",
