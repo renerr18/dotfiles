@@ -9,7 +9,6 @@
 		"git.autofetch": true,
 		"git.confirmSync": false,
 		"workbench.startupEditor": "none",
-		"codestream.email": "sam.heller@customink.com",
 		"window.zoomLevel": 1,
 		"solargraph.bundlerPath": "/usr/local/bundle",
 		"solargraph.commandPath": "/workspaces/groups/vendor/bundle/ruby/gems/solargraph-0.44.2/bin/solargraph",
